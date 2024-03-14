@@ -4,7 +4,13 @@ import TopLeftBar from "./TopLeftBar/TopLeftBar";
 
 function LeftContainer() {
 	return (
-		<div style={{ flex: 1, flexDirection: "column" }}>
+		<div
+			style={{
+				flex: 1,
+				flexDirection: "column",
+				borderRight: "solid 1px",
+			}}
+		>
 			<TopLeftBar />
 			<PeopleSearchSection />
 			<AllUserSection />

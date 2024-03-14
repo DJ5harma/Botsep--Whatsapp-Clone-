@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 
 function TopRightBar() {
 	return (
-		<div style={{ flex: 1 }}>
+		<div style={{ flex: 1, backgroundColor: "rgb(0,20,0)" }}>
 			{/* <div style={{ flex: 3, justifyContent: "start" }}> */}
 			<CgProfile
 				size={30}
@@ -13,7 +13,9 @@ function TopRightBar() {
 			/>
 			<p style={{ flex: 16 }}>
 				<p>ReceiverName</p>
-				<p>last seen today at: SampleDate</p>
+				<p style={{ fontSize: 10, color: "gray" }}>
+					last seen today at: SampleDate
+				</p>
 			</p>
 			{/* </div> */}
 			<div style={{ flex: 5, justifyContent: "space-around" }}>

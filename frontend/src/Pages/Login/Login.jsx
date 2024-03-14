@@ -26,7 +26,7 @@ function Login() {
 				onChange={(e) => setuser({ ...user, password: e.target.value })}
 				type="password"
 			/>
-			<button>Register</button>
+			<button>Login</button>
 			<Link to="/Register">Don't have an account? Register!</Link>
 		</div>
 	);

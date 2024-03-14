@@ -5,7 +5,7 @@ import Home from "./Pages/Home/Home";
 
 function App() {
 	return (
-		<div style={{ height: "99vh" }}>
+		<div style={{ height: "100vh" }}>
 			<Routes>
 				<Route index element={<Home />} />
 				<Route path="/Home" element={<Home />} />
