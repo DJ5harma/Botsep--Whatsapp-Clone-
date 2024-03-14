@@ -23,6 +23,6 @@ export async function RegisterController(req, res) {
 			payload: newUser,
 		});
 	} catch (error) {
-		return res.json({ success: false, message: `${error.message}` });
+		return res.json({ success: false, message: error.message });
 	}
 }

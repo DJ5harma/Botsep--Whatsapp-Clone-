@@ -21,6 +21,6 @@ export async function CheckCredentials(req, res, next) {
 		req.senderId = user._id;
 		next();
 	} catch (error) {
-		return res.json({ success: false, message: `${error.message}` });
+		return res.json({ success: false, message: error.message });
 	}
 }

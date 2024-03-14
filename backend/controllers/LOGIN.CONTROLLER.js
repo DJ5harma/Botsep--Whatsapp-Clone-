@@ -18,6 +18,6 @@ export async function LoginController(req, res) {
 			payload: user,
 		});
 	} catch (error) {
-		return res.json({ success: false, message: `${error.message}` });
+		return res.json({ success: false, message: error.message });
 	}
 }

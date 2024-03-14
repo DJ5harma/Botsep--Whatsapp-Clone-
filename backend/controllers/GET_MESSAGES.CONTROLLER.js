@@ -29,7 +29,7 @@ export async function GetMessagesController(req, res) {
 	} catch (error) {
 		return res.json({
 			success: false,
-			message: `${error.message}`,
+			message: error.message,
 		});
 	}
 }
