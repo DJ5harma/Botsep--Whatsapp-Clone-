@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(95, 84, 84);
+}
+input,
+button {
+	padding: 10px;
+}
+div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+
+	border: solid;
+}
+.form {
+	flex-direction: column;
+	justify-content: space-around;
+
+	input,
+	button {
+		margin: 10px;
+	}
+}
