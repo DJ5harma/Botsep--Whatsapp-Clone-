@@ -1,23 +1,23 @@
 import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
-import { LoginController } from "./controllers/LOGIN.CONTROLLER.js";
-import { RegisterController } from "./controllers/REGISTER.CONTROLLER.js";
-import { SendMessageController } from "./controllers/SEND_MESSAGE.CONTROLLER.js";
-import { GetMessagesController } from "./controllers/GET_MESSAGES.CONTROLLER.js";
-import { GetUsersController } from "./controllers/GET_USERS.js";
+
+// Middleware import
 import { CheckCredentials } from "./middleware/CheckCredentials.js";
+
+// Route imports
+import authRoutes from "./routes/auth.routes.js";
+import messageRoutes from "./routes/message.routes.js";
+import userRoutes from "./routes/user.routes.js";
 
 dotenv.config();
 const app = express();
 
 app.use(express.json());
 
-app.post("/api/auth/login", LoginController);
-app.post("/api/auth/register", RegisterController);
-app.post("/api/messages/send", CheckCredentials, SendMessageController);
-app.post("/api/messages/get", CheckCredentials, GetMessagesController);
-app.get("/api/users/get", CheckCredentials, GetUsersController);
+app.use("/api/auth", authRoutes);
+app.use("/api/messages", CheckCredentials, messageRoutes);
+app.use("/api/users", CheckCredentials, userRoutes);
 
 // DB Connection....
 mongoose

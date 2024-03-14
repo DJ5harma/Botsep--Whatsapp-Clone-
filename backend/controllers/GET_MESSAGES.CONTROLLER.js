@@ -1,4 +1,4 @@
-import CHATMODEL from "../models/CHAT.MODEL";
+import CHATMODEL from "../models/CHAT.MODEL.js";
 
 export async function GetMessagesController(req, res) {
 	const { chatId } = req.body;
