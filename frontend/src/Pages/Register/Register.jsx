@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Register() {
 	const [user, setuser] = useState({
@@ -9,7 +10,14 @@ function Register() {
 	});
 
 	return (
-		<div className="form">
+		<div
+			style={{
+				border: "solid",
+				height: "50vh",
+				flexDirection: "column",
+				justifyContent: "space-around",
+			}}
+		>
 			<input
 				placeholder="Fullname"
 				value={user.fullname}
@@ -35,6 +43,7 @@ function Register() {
 				type="password"
 			/>
 			<button>Register</button>
+			<Link to="/Login">Already have an account? Login!</Link>
 		</div>
 	);
 }

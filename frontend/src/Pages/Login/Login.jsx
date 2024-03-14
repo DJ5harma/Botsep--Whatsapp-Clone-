@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
 	const [user, setuser] = useState({
@@ -6,7 +7,14 @@ function Login() {
 		password: "",
 	});
 	return (
-		<div className="form">
+		<div
+			style={{
+				border: "solid",
+				height: "40vh",
+				flexDirection: "column",
+				justifyContent: "space-around",
+			}}
+		>
 			<input
 				placeholder="Username (unique)"
 				value={user.username}
@@ -19,6 +27,7 @@ function Login() {
 				type="password"
 			/>
 			<button>Register</button>
+			<Link to="/Register">Don't have an account? Register!</Link>
 		</div>
 	);
 }

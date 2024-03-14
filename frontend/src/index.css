@@ -2,6 +2,8 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	text-decoration: none;
+	color: black;
 }
 body {
 	background-color: rgb(95, 84, 84);
@@ -18,13 +20,4 @@ div {
 	width: 100%;
 
 	border: solid;
-}
-.form {
-	flex-direction: column;
-	justify-content: space-around;
-
-	input,
-	button {
-		margin: 10px;
-	}
 }
