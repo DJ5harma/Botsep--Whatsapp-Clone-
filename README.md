@@ -18,5 +18,3 @@ To practice a lil and use Redux Toolkit if state management gets out of practica
 Use tailwind if feels like it,
 Use Multer and Cloudinary for file uploads,
 and.... Will update.
-
-# BE and FE not connected yet.
