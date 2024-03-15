@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import ChattingWithContextProvider from "./contexts/ChattingWithContextProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
@@ -16,8 +17,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 				},
 			}}
 		/>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
+		<ChattingWithContextProvider>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</ChattingWithContextProvider>
 	</React.StrictMode>
 );

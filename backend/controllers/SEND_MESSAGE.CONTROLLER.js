@@ -14,14 +14,13 @@ export async function SendMessageController(req, res) {
 				participants: [senderId, receiverId],
 			});
 		}
-		const message = new MESSAGEMODEL({
+		const message = await MESSAGEMODEL.create({
 			senderId,
 			receiverId,
 			text,
 		});
-		await message.save();
 
-		chat.push(message._id);
+		chat.members.push(message._id);
 		await chat.save();
 
 		return res.json({
@@ -30,6 +29,6 @@ export async function SendMessageController(req, res) {
 			payload: text,
 		});
 	} catch (error) {
-		return res.json({ success: false, message: "Internal server error!" });
+		return res.json({ success: false, message: error.message });
 	}
 }

@@ -1,20 +1,32 @@
+import { useContext } from "react";
+import { chattingWith } from "../../../../../contexts/ChattingWithContextProvider";
+
 function SingleUser({ user }) {
-	console.log(user);
+	const { setReceiver } = useContext(chattingWith);
+
 	return (
 		<div
 			style={{
 				minHeight: 80,
 				justifyContent: "start",
 				paddingLeft: 3,
+				cursor: "pointer",
 			}}
 			className="color2"
+			onClick={() => {
+				setReceiver({
+					fullname: user.fullname,
+					username: user.username,
+					_id: user._id,
+				});
+			}}
 		>
 			{
 				<div
 					style={{
 						width: 45,
 						height: 45,
-						border: "solid white 2px",
+						border: "solid rgb(100,100,100) 2px",
 						borderRadius: 30,
 						marginRight: 15,
 						marginLeft: 15,

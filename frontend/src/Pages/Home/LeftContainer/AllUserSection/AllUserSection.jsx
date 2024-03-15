@@ -37,8 +37,9 @@ function AllUserSection() {
 						borderBottom: "solid white 1px",
 						height: "fit-content",
 					}}
+					key={user._id}
 				>
-					<SingleUser user={user} key={user._id} />
+					<SingleUser user={user} />
 				</div>
 			))}
 		</div>

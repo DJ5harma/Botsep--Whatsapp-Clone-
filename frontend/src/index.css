@@ -24,12 +24,6 @@ body {
 	padding: 20px 0;
 	background-color: rgb(10, 60, 10);
 }
-input {
-	height: 50px;
-}
-button {
-	cursor: pointer;
-}
 @keyframes wiggleAni {
 	50% {
 		margin: 0 5px;
@@ -50,6 +44,12 @@ button {
 }
 input:focus {
 	outline: 0;
+}
+input {
+	height: 50px;
+}
+button {
+	cursor: pointer;
 }
 div {
 	display: flex;
