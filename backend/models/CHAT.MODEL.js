@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export default mongoose.Schema(
+export default mongoose.model(
 	"Chat",
 	new mongoose.Schema(
 		{
