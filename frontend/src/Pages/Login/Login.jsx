@@ -13,19 +13,19 @@ function Login() {
 	return (
 		<div
 			style={{
-				border: "solid",
-				height: "40vh",
-				flexDirection: "column",
-				justifyContent: "space-around",
+				height: "60vh",
 			}}
+			className="login-register-div"
 		>
+			<h1>Botsep</h1>
+
 			<input
-				placeholder="Username (unique)"
+				placeholder="Username"
 				value={user.username}
 				onChange={(e) => setuser({ ...user, username: e.target.value })}
 			/>
 			<input
-				placeholder="Password (min 8 chars)"
+				placeholder="Password"
 				value={user.password}
 				onChange={(e) => setuser({ ...user, password: e.target.value })}
 				type="password"

@@ -1,14 +1,35 @@
-import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
+import SingleUser from "../AllUserSection/SingleUser/SingleUser";
 function TopLeftBar() {
+	const user = JSON.parse(localStorage.getItem("USER_INFO"));
+
 	return (
 		<div
 			style={{
 				flex: 1,
 				justifyContent: "start",
-				backgroundColor: "rgb(0,20,0)",
 			}}
+			className="color2"
 		>
-			<CgProfile size={30} style={{ marginRight: 20, marginLeft: 20 }} />
+			<div
+				style={{
+					flex: 1,
+				}}
+			>
+				<SingleUser user={user} />
+			</div>
+			<Link to="/login">
+				<button
+					style={{
+						border: "solid 2px",
+						flex: 1,
+						marginRight: 15,
+						fontSize: 15,
+					}}
+				>
+					Switch Account
+				</button>
+			</Link>
 		</div>
 	);
 }

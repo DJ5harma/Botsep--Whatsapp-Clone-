@@ -3,6 +3,6 @@ import { GetUsersController } from "../controllers/GET_USERS.CONTROLLER.js";
 
 const userRoutes = express.Router();
 
-userRoutes.get("/get", GetUsersController);
+userRoutes.post("/get", GetUsersController);
 
 export default userRoutes;

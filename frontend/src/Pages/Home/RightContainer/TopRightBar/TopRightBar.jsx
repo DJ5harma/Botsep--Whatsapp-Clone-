@@ -5,15 +5,15 @@ import { CgProfile } from "react-icons/cg";
 
 function TopRightBar() {
 	return (
-		<div style={{ flex: 1, backgroundColor: "rgb(0,20,0)" }}>
+		<div style={{ flex: 1 }} className="color2">
 			{/* <div style={{ flex: 3, justifyContent: "start" }}> */}
 			<CgProfile
 				size={30}
-				style={{ marginRight: 20, marginLeft: 20, flex: 1 }}
+				style={{ marginRight: 15, marginLeft: 15, flex: 1 }}
 			/>
 			<p style={{ flex: 16 }}>
 				<span>ReceiverName</span>
-				<span style={{ fontSize: 10, color: "gray", display: "block" }}>
+				<span style={{ fontSize: 12, color: "gray", display: "block" }}>
 					last seen today at: SampleDate
 				</span>
 			</p>

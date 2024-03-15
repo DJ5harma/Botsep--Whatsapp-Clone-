@@ -6,22 +6,50 @@
 	color: white;
 
 	font-family: "Poppins";
+	font-size: medium;
 }
 body {
 	background-color: rgb(9, 43, 11);
-	/* background: linear-gradient(
-		to right,
-		rgba(5, 37, 9, 0.996),
-		rgba(23, 67, 29, 0.865)
-	); */
+}
+
+.color2 {
+	background-color: rgb(0, 20, 0);
+}
+.login-register-div {
+	max-width: 25vw;
+	border: solid;
+	justify-content: space-around;
+	flex-direction: column;
+	border-radius: 20px;
+	padding: 20px 0;
+	background-color: rgb(10, 60, 10);
+}
+input {
+	height: 50px;
+}
+button {
+	cursor: pointer;
+}
+@keyframes wiggleAni {
+	50% {
+		margin: 0 5px;
+		color: black;
+		background-color: white;
+	}
+}
+button:hover {
+	/* position: relative; */
+	animation: wiggleAni 1s;
 }
 input,
 button {
 	padding: 10px 20px;
 	border-radius: 20px;
 	background-color: black;
-	/* color: white; */
 	border: 0;
+}
+input:focus {
+	outline: 0;
 }
 div {
 	display: flex;
@@ -29,6 +57,4 @@ div {
 	align-items: center;
 	height: 100%;
 	width: 100%;
-
-	/* border: solid; */
 }

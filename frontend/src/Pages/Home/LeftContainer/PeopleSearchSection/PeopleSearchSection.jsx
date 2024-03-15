@@ -7,7 +7,7 @@ function PeopleSearchSection() {
 			style={{
 				flex: 1,
 				justifyContent: "space-around",
-				borderTop: "solid 1px",
+				borderBottom: "solid 1px",
 			}}
 		>
 			<FaSearch size={25} style={{ flex: 1 }} />

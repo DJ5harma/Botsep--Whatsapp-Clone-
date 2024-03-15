@@ -15,12 +15,11 @@ function Register() {
 	return (
 		<div
 			style={{
-				border: "solid",
-				height: "50vh",
-				flexDirection: "column",
-				justifyContent: "space-around",
+				height: "80vh",
 			}}
+			className="login-register-div"
 		>
+			<h1>Botsep</h1>
 			<input
 				placeholder="Fullname"
 				value={user.fullname}

@@ -1,20 +1,36 @@
-import { CgProfile } from "react-icons/cg";
-
-function SingleUser() {
+function SingleUser({ user }) {
+	console.log(user);
 	return (
 		<div
 			style={{
-				minHeight: 70,
-				border: "solid 1px white",
+				minHeight: 80,
 				justifyContent: "start",
-				backgroundColor: "rgb(0,20,0)",
+				paddingLeft: 3,
 			}}
+			className="color2"
 		>
-			<CgProfile size={30} style={{ marginRight: 20, marginLeft: 20 }} />
+			{
+				<div
+					style={{
+						width: 45,
+						height: 45,
+						border: "solid white 2px",
+						borderRadius: 30,
+						marginRight: 15,
+						marginLeft: 15,
+					}}
+				>
+					{user.profilePic === "none" ? (
+						user.fullname[0]
+					) : (
+						<img src={user.profilePic} size={30} alt="" />
+					)}
+				</div>
+			}
 			<p>
-				<span>SingleUser</span>
-				<span style={{ color: "gray", fontSize: 10, display: "block" }}>
-					some sample message
+				<span>{user.fullname}</span>
+				<span style={{ color: "gray", fontSize: 14, display: "block" }}>
+					{user.username}
 				</span>
 			</p>
 		</div>

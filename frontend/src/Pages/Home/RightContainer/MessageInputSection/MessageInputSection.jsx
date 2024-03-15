@@ -10,8 +10,8 @@ function MessageInputSection() {
 				flex: 1,
 				borderTop: "solid 1px",
 				padding: "0 10px",
-				backgroundColor: "rgb(0,20,0)",
 			}}
+			className="color2"
 		>
 			<FaPlus style={{ flex: 1 }} />
 			<MdOutlineEmojiEmotions style={{ flex: 1 }} />
