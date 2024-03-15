@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { handleLogin } from "../../Utilities/handleLogin";
 
 function Login() {
 	const [user, setuser] = useState({
 		username: "",
 		password: "",
 	});
+
+	const navigate = useNavigate();
+
 	return (
 		<div
 			style={{
@@ -26,7 +30,16 @@ function Login() {
 				onChange={(e) => setuser({ ...user, password: e.target.value })}
 				type="password"
 			/>
-			<button>Login</button>
+			<button
+				onClick={async () => {
+					const loggedIn = await handleLogin(user);
+					if (loggedIn) {
+						navigate("/Home", { replace: true });
+					}
+				}}
+			>
+				Login
+			</button>
 			<Link to="/Register">Don't have an account? Register!</Link>
 		</div>
 	);

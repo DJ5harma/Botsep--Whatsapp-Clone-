@@ -12,10 +12,10 @@ function SingleUser() {
 		>
 			<CgProfile size={30} style={{ marginRight: 20, marginLeft: 20 }} />
 			<p>
-				<p>SingleUser</p>
-				<p style={{ color: "gray", fontSize: 10 }}>
+				<span>SingleUser</span>
+				<span style={{ color: "gray", fontSize: 10, display: "block" }}>
 					some sample message
-				</p>
+				</span>
 			</p>
 		</div>
 	);

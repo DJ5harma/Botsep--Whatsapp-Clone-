@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { handleRegister } from "../../Utilities/handleRegister";
 
 function Register() {
 	const [user, setuser] = useState({
@@ -8,6 +9,8 @@ function Register() {
 		password: "",
 		confirmPassword: "",
 	});
+
+	const navigate = useNavigate();
 
 	return (
 		<div
@@ -42,7 +45,16 @@ function Register() {
 				}
 				type="password"
 			/>
-			<button>Register</button>
+			<button
+				onClick={() => {
+					const registered = handleRegister(user);
+					if (registered) {
+						navigate("/Home", { replace: true });
+					}
+				}}
+			>
+				Register
+			</button>
 			<Link to="/Login">Already have an account? Login!</Link>
 		</div>
 	);

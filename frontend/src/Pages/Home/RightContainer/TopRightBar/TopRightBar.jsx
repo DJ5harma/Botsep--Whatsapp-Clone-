@@ -12,10 +12,10 @@ function TopRightBar() {
 				style={{ marginRight: 20, marginLeft: 20, flex: 1 }}
 			/>
 			<p style={{ flex: 16 }}>
-				<p>ReceiverName</p>
-				<p style={{ fontSize: 10, color: "gray" }}>
+				<span>ReceiverName</span>
+				<span style={{ fontSize: 10, color: "gray", display: "block" }}>
 					last seen today at: SampleDate
-				</p>
+				</span>
 			</p>
 			{/* </div> */}
 			<div style={{ flex: 5, justifyContent: "space-around" }}>
