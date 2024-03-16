@@ -10,7 +10,6 @@ export async function handleLogin(user) {
 		if (!success) {
 			throw new Error(message);
 		}
-
 		localStorage.setItem("USER_INFO", JSON.stringify(payload));
 		toast.success(`Logged in as ${payload.username}!`);
 

@@ -5,10 +5,13 @@ import { BsFillSendFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { handleSendMessage } from "../../../../Utilities/handleSendMessage";
 import { chattingWith } from "../../../../contexts/ChattingWithContextProvider";
+import { userContext } from "../../../../contexts/UserContextProvider";
 
 function MessageInputSection() {
 	const [message, setMessage] = useState("");
 	const { receiver } = useContext(chattingWith);
+
+	const { user } = useContext(userContext);
 
 	return (
 		<div
@@ -19,8 +22,16 @@ function MessageInputSection() {
 			}}
 			className="color2"
 		>
-			{receiver._id === "null" ? (
-				<p>Please select a receiver to exchange messages</p>
+			{receiver._id === user._id ? (
+				<p
+					style={{
+						backgroundColor: "rgba(0,0,0,0.7)",
+						padding: "1vw 1.5vw",
+						borderRadius: 10,
+					}}
+				>
+					Please select somebody to exchange messages with...
+				</p>
 			) : (
 				<>
 					<FaPlus style={{ flex: 1 }} />

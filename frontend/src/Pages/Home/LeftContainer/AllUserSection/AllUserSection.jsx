@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import SingleUser from "./SingleUser/SingleUser";
-import axios from "axios";
 import { handleGetAllUsers } from "../../../../Utilities/handeGetAllUsers";
 
 function AllUserSection() {

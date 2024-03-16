@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { chattingWith } from "../../../../contexts/ChattingWithContextProvider";
 import { handleGetPersonalMessages } from "../../../../Utilities/handleGetPersonalMessages";
+import SelfInfoSection from "./SelfInfoSection";
+import { userContext } from "../../../../contexts/UserContextProvider";
 
 function ChatSection() {
 	const { receiver } = useContext(chattingWith);
@@ -14,6 +16,8 @@ function ChatSection() {
 			updatedAt: "2024-03-16T06:20:24.087Z",
 		},
 	]);
+
+	const { user } = useContext(userContext);
 
 	useEffect(() => {
 		handleGetPersonalMessages(receiver._id, setMessages);
@@ -29,30 +33,36 @@ function ChatSection() {
 			}}
 			className="color3"
 		>
-			{messages.map((message) => (
-				<div
-					key={message._id}
-					style={{
-						height: "4vw",
-						width: "100%",
-
-						justifyContent:
-							message.senderId === receiver._id ? "start" : "end",
-						padding: "0 1vw",
-						marginTop: "1.5vw",
-					}}
-				>
-					<p
+			{receiver._id === "null" || receiver._id === user._id ? (
+				<SelfInfoSection />
+			) : (
+				messages.map((message) => (
+					<div
+						key={message._id}
 						style={{
-							border: "solid 2px",
-							borderRadius: 30,
-							padding: "1vw 2vw",
+							height: "4vw",
+							width: "100%",
+
+							justifyContent:
+								message.senderId === receiver._id
+									? "start"
+									: "end",
+							padding: "0 1vw",
+							marginTop: "1.5vw",
 						}}
 					>
-						{message.text}
-					</p>
-				</div>
-			))}
+						<p
+							style={{
+								border: "solid 2px",
+								borderRadius: 30,
+								padding: "1vw 2vw",
+							}}
+						>
+							{message.text}
+						</p>
+					</div>
+				))
+			)}
 		</div>
 	);
 }

@@ -1,13 +1,13 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { handleRegister } from "../../Utilities/handleRegister";
+import { useState } from "react";
 
 function Register() {
-	const [user, setuser] = useState({
-		username: "",
+	const [user, setUser] = useState({
 		fullname: "",
+		username: "",
 		password: "",
-		confirmPassword: "",
+		profilePic: "none",
 	});
 
 	const navigate = useNavigate();
@@ -24,24 +24,24 @@ function Register() {
 			<input
 				placeholder="Fullname"
 				value={user.fullname}
-				onChange={(e) => setuser({ ...user, fullname: e.target.value })}
+				onChange={(e) => setUser({ ...user, fullname: e.target.value })}
 			/>
 			<input
 				placeholder="Username (unique)"
 				value={user.username}
-				onChange={(e) => setuser({ ...user, username: e.target.value })}
+				onChange={(e) => setUser({ ...user, username: e.target.value })}
 			/>
 			<input
 				placeholder="Password (min 8 chars)"
 				value={user.password}
-				onChange={(e) => setuser({ ...user, password: e.target.value })}
+				onChange={(e) => setUser({ ...user, password: e.target.value })}
 				type="password"
 			/>
 			<input
 				placeholder="Confirm Password"
 				value={user.confirmPassword}
 				onChange={(e) =>
-					setuser({ ...user, confirmPassword: e.target.value })
+					setUser({ ...user, confirmPassword: e.target.value })
 				}
 				type="password"
 			/>

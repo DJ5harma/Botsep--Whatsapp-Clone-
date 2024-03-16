@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { handleLogin } from "../../Utilities/handleLogin";
+import { useState } from "react";
 
 function Login() {
-	const [user, setuser] = useState({
+	const [user, setUser] = useState({
 		username: "",
 		password: "",
 	});
@@ -22,12 +22,12 @@ function Login() {
 			<input
 				placeholder="Username"
 				value={user.username}
-				onChange={(e) => setuser({ ...user, username: e.target.value })}
+				onChange={(e) => setUser({ ...user, username: e.target.value })}
 			/>
 			<input
 				placeholder="Password"
 				value={user.password}
-				onChange={(e) => setuser({ ...user, password: e.target.value })}
+				onChange={(e) => setUser({ ...user, password: e.target.value })}
 				type="password"
 			/>
 			<button

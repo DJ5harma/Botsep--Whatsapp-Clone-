@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import SingleUser from "../AllUserSection/SingleUser/SingleUser";
+import { useContext } from "react";
+import { userContext } from "../../../../contexts/UserContextProvider";
 function TopLeftBar() {
-	const user = JSON.parse(localStorage.getItem("USER_INFO"));
+	const { user } = useContext(userContext);
 
 	return (
 		<div

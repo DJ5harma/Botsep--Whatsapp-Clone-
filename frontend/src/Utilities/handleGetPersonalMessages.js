@@ -20,7 +20,6 @@ export async function handleGetPersonalMessages(receiverId, setMessages) {
 			throw new Error("Internal server error!");
 		}
 		setMessages(response.data.payload);
-		console.log(response.data.payload);
 		return;
 	} catch (error) {
 		console.log("error");

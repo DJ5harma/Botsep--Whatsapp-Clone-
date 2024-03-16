@@ -5,8 +5,6 @@ export async function handleSendMessage(message, receiverId) {
 	const { username, password } = JSON.parse(
 		localStorage.getItem("USER_INFO")
 	);
-	console.log(username, password);
-
 	try {
 		if (message === "") {
 			throw new Error("Don't send empty messages!");
@@ -18,9 +16,6 @@ export async function handleSendMessage(message, receiverId) {
 			username,
 			password,
 		});
-
-		// console.log(response);
-		// return;
 
 		if (response.data.success === false) {
 			throw new Error("Internal server error!");
