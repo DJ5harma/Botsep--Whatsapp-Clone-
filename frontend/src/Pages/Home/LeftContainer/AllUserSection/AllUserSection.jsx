@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SingleUser from "./SingleUser/SingleUser";
 import axios from "axios";
+import { handleGetAllUsers } from "../../../../Utilities/handeGetAllUsers";
 
 function AllUserSection() {
 	const [users, setUsers] = useState([
@@ -14,12 +15,7 @@ function AllUserSection() {
 	]);
 
 	useEffect(() => {
-		const { username, password } = JSON.parse(localStorage.USER_INFO);
-
-		axios.post("/api/users/get", { username, password }).then((res) => {
-			setUsers(res.data.payload);
-			// console.log(res.data.payload);
-		});
+		handleGetAllUsers(setUsers);
 	}, []);
 
 	return (

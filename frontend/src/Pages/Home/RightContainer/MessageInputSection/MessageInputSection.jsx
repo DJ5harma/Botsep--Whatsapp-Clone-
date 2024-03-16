@@ -9,6 +9,7 @@ import { chattingWith } from "../../../../contexts/ChattingWithContextProvider";
 function MessageInputSection() {
 	const [message, setMessage] = useState("");
 	const { receiver } = useContext(chattingWith);
+
 	return (
 		<div
 			style={{
@@ -18,23 +19,34 @@ function MessageInputSection() {
 			}}
 			className="color2"
 		>
-			<FaPlus style={{ flex: 1 }} />
-			<MdOutlineEmojiEmotions style={{ flex: 1 }} />
-			<input
-				placeholder="Type a message..."
-				value={message}
-				style={{ flex: 11, padding: "2vw 2vw", fontSize: "1vw" }}
-				onChange={(e) => setMessage(e.target.value)}
-			/>
-			<div
-				onClick={() => {
-					handleSendMessage(message, receiver._id);
-				}}
-				style={{ flex: 1, cursor: "pointer" }}
-			>
-				<BsFillSendFill />
-			</div>
-			<FaMicrophone style={{ flex: 1 }} />
+			{receiver._id === "null" ? (
+				<p>Please select a receiver to exchange messages</p>
+			) : (
+				<>
+					<FaPlus style={{ flex: 1 }} />
+					<MdOutlineEmojiEmotions style={{ flex: 1 }} />
+					<input
+						placeholder="Type a message..."
+						value={message}
+						style={{
+							flex: 11,
+							padding: "2vw 2vw",
+							fontSize: "1vw",
+						}}
+						onChange={(e) => setMessage(e.target.value)}
+					/>
+					<div
+						onClick={() => {
+							handleSendMessage(message, receiver._id);
+							setMessage("");
+						}}
+						style={{ flex: 1, cursor: "pointer" }}
+					>
+						<BsFillSendFill />
+					</div>
+					<FaMicrophone style={{ flex: 1 }} />
+				</>
+			)}
 		</div>
 	);
 }

@@ -7,11 +7,12 @@ export async function SendMessageController(req, res) {
 
 	try {
 		let chat = await CHATMODEL.findOne({
-			participants: { $all: [senderId, receiverId] },
+			members: { $all: [senderId, receiverId] },
 		});
+
 		if (!chat) {
 			chat = new CHATMODEL({
-				participants: [senderId, receiverId],
+				members: [senderId, receiverId],
 			});
 		}
 		const message = await MESSAGEMODEL.create({
@@ -20,7 +21,7 @@ export async function SendMessageController(req, res) {
 			text,
 		});
 
-		chat.members.push(message._id);
+		chat.messages.push(message._id);
 		await chat.save();
 
 		return res.json({

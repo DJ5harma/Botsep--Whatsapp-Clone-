@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import LeftContainer from "./LeftContainer/LeftContainer";
 import RightContainer from "./RightContainer/RightContainer";
+import { chattingWith } from "../../contexts/ChattingWithContextProvider";
 
 function Home() {
 	return (
