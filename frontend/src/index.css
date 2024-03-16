@@ -57,6 +57,13 @@ body {
 		rgb(255, 255, 255, 0.2)
 	);
 }
+.single-user-selected {
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0),
+		rgb(255, 255, 255, 0.2)
+	);
+}
 
 @keyframes wiggleAni {
 	50% {

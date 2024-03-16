@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { chattingWith } from "../../../../../contexts/ChattingWithContextProvider";
 
 function SingleUser({ user }) {
-	const { setReceiver } = useContext(chattingWith);
+	const { receiver, setReceiver } = useContext(chattingWith);
 
 	return (
 		<div
@@ -12,7 +12,10 @@ function SingleUser({ user }) {
 				paddingLeft: 3,
 				cursor: "pointer",
 			}}
-			className="color2 single-user"
+			className={
+				"color2 single-user " +
+				(user._id === receiver._id && "single-user-selected")
+			}
 			onClick={() => {
 				setReceiver({
 					fullname: user.fullname,
