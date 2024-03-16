@@ -30,6 +30,7 @@ function AllUserSection() {
 				overflow: "auto",
 				justifyContent: "start",
 			}}
+			className="color3"
 		>
 			{users.map((user) => (
 				<div

@@ -23,7 +23,7 @@ function MessageInputSection() {
 			<input
 				placeholder="Type a message..."
 				value={message}
-				style={{ flex: 11 }}
+				style={{ flex: 11, padding: "2vw 2vw", fontSize: "1vw" }}
 				onChange={(e) => setMessage(e.target.value)}
 			/>
 			<div

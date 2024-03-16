@@ -12,7 +12,7 @@ function SingleUser({ user }) {
 				paddingLeft: 3,
 				cursor: "pointer",
 			}}
-			className="color2"
+			className="color2 single-user"
 			onClick={() => {
 				setReceiver({
 					fullname: user.fullname,

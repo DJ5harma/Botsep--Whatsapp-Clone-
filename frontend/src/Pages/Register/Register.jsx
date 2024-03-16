@@ -15,7 +15,8 @@ function Register() {
 	return (
 		<div
 			style={{
-				height: "80vh",
+				height: "90vh",
+				// width: "32vw",
 			}}
 			className="login-register-div"
 		>
@@ -54,7 +55,9 @@ function Register() {
 			>
 				Register
 			</button>
-			<Link to="/Login">Already have an account? Login!</Link>
+			<Link to="/Login">
+				<p>Already have an account? Login!</p>
+			</Link>
 		</div>
 	);
 }
