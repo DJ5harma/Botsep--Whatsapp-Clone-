@@ -7,7 +7,7 @@ function App() {
 	return (
 		<div style={{ height: "100vh" }}>
 			<Routes>
-				<Route index element={<Home />} />
+				<Route index element={<Login />} />
 				<Route path="/Home" element={<Home />} />
 				<Route path="/Register" element={<Register />} />
 				<Route path="/Login" element={<Login />} />
