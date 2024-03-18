@@ -1,0 +1,2 @@
+PORT = 3000
+MONGO_URI = "mongodb+srv://sunubhargav2004:1JTdexy0eP0bZMeD@cluster0.ddbxbyp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/Botsep"
