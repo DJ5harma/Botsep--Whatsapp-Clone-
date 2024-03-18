@@ -2,6 +2,9 @@ import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
 
+import { createServer } from "node:http";
+import { Server } from "socket.io";
+
 // Middleware import
 import { CheckCredentials } from "./middleware/CheckCredentials.js";
 
@@ -30,3 +33,11 @@ mongoose
 		);
 	})
 	.catch((error) => console.log(error));
+
+// Socket.io connection
+
+const socketServer = createServer(app);
+const io = new Server(socketServer);
+io.on("connection", (socket) => {
+	console.log(`a user connected`);
+});

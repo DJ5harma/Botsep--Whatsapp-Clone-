@@ -12,7 +12,7 @@ function Home() {
 	useEffect(() => {
 		setReceiver(JSON.parse(localStorage.getItem("USER_INFO")));
 		setUser(JSON.parse(localStorage.getItem("USER_INFO")));
-	}, [user]);
+	}, []);
 
 	return (
 		<div className="home-container">
