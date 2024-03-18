@@ -46,8 +46,8 @@ function Register() {
 				type="password"
 			/>
 			<button
-				onClick={() => {
-					const registered = handleRegister(user);
+				onClick={async () => {
+					const registered = await handleRegister(user);
 					if (registered) {
 						navigate("/Home", { replace: true });
 					}

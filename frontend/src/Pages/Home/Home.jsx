@@ -7,7 +7,7 @@ import { userContext } from "../../contexts/UserContextProvider";
 function Home() {
 	const { setReceiver } = useContext(chattingWith);
 
-	const { setUser } = useContext(userContext);
+	const { user, setUser } = useContext(userContext);
 
 	useEffect(() => {
 		setReceiver(JSON.parse(localStorage.getItem("USER_INFO")));
