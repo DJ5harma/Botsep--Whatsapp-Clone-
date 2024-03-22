@@ -2,9 +2,6 @@ import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
 
-import { createServer } from "node:http";
-import { Server } from "socket.io";
-
 // Middleware import
 import { CheckCredentials } from "./middleware/CheckCredentials.js";
 
