@@ -8,7 +8,7 @@ import { chattingWith } from "../../contexts/ChattingWithContextProvider";
 function Home() {
 	const { user, setUser } = useContext(userContext);
 
-	const { receiver, setReceiver } = useContext(chattingWith);
+	const { setReceiver } = useContext(chattingWith);
 
 	const navigate = useNavigate();
 

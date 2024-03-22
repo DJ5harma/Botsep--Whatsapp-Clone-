@@ -1,22 +1,6 @@
-import { useEffect, useState } from "react";
 import SingleUser from "./SingleUser/SingleUser";
-import { handleGetAllUsers } from "../../../../Utilities/handeGetAllUsers";
 
-function AllUserSection() {
-	const [users, setUsers] = useState([
-		{
-			_id: "null",
-			fullname: "Loading...",
-			username: "Loading",
-			createdAt: "null",
-			updatedAt: "null",
-		},
-	]);
-
-	useEffect(() => {
-		handleGetAllUsers(setUsers);
-	}, []);
-
+function AllUserSection({ users }) {
 	return (
 		<div
 			style={{

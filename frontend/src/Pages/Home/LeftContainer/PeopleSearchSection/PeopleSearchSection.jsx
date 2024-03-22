@@ -1,7 +1,8 @@
 import { FaSearch } from "react-icons/fa";
 import { IoFilter } from "react-icons/io5";
 
-function PeopleSearchSection() {
+function PeopleSearchSection({ users }) {
+	console.log(users);
 	return (
 		<div
 			style={{
