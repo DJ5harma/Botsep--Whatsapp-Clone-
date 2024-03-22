@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { handleRegister } from "../../Utilities/handleRegister";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { userContext } from "../../contexts/UserContextProvider";
 
 function Register() {
-	const [user, setUser] = useState({
+	const [form, setForm] = useState({
 		fullname: "",
 		username: "",
 		password: "",
@@ -12,11 +13,12 @@ function Register() {
 
 	const navigate = useNavigate();
 
+	const { setUser } = useContext(userContext);
+
 	return (
 		<div
 			style={{
 				height: "90vh",
-				// width: "32vw",
 			}}
 			className="login-register-div"
 		>
@@ -24,17 +26,17 @@ function Register() {
 			<input
 				placeholder="Fullname"
 				value={user.fullname}
-				onChange={(e) => setUser({ ...user, fullname: e.target.value })}
+				onChange={(e) => setForm({ ...form, fullname: e.target.value })}
 			/>
 			<input
 				placeholder="Username (unique)"
 				value={user.username}
-				onChange={(e) => setUser({ ...user, username: e.target.value })}
+				onChange={(e) => setForm({ ...form, username: e.target.value })}
 			/>
 			<input
 				placeholder="Password (min 8 chars)"
 				value={user.password}
-				onChange={(e) => setUser({ ...user, password: e.target.value })}
+				onChange={(e) => setForm({ ...form, password: e.target.value })}
 				type="password"
 			/>
 			<input
@@ -49,6 +51,7 @@ function Register() {
 				onClick={async () => {
 					const registered = await handleRegister(user);
 					if (registered) {
+						setUser(JSON.parse(localStorage.getItem("USER_INFO")));
 						navigate("/Home", { replace: true });
 					}
 				}}

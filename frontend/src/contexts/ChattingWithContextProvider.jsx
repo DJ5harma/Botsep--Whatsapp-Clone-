@@ -5,7 +5,7 @@ export const chattingWith = createContext();
 function ChattingWithContextProvider({ children }) {
 	const [receiver, setReceiver] = useState({
 		_id: "null",
-		fullname: "Loading...",
+		fullname: "Currently chatting with nobody",
 		username: "",
 	});
 

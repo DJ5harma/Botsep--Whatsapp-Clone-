@@ -42,7 +42,6 @@ function ChatSection() {
 						style={{
 							height: "4vw",
 							width: "100%",
-
 							justifyContent:
 								message.senderId === receiver._id
 									? "start"

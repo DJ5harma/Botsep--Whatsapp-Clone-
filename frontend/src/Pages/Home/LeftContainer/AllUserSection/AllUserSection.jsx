@@ -27,17 +27,19 @@ function AllUserSection() {
 			}}
 			className="color3"
 		>
-			{users.map((user) => (
-				<div
-					style={{
-						borderBottom: "solid white 1px",
-						height: "fit-content",
-					}}
-					key={user._id}
-				>
-					<SingleUser user={user} />
-				</div>
-			))}
+			{users.map((user) => {
+				return (
+					<div
+						style={{
+							borderBottom: "solid white 1px",
+							height: "fit-content",
+						}}
+						key={user._id}
+					>
+						<SingleUser user={user} />
+					</div>
+				);
+			})}
 		</div>
 	);
 }

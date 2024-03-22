@@ -22,7 +22,7 @@ function MessageInputSection() {
 			}}
 			className="color2"
 		>
-			{receiver._id === user._id ? (
+			{receiver._id === user._id || receiver._id === "null" ? (
 				<p
 					style={{
 						backgroundColor: "rgba(0,0,0,0.7)",

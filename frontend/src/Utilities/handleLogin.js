@@ -3,6 +3,9 @@ import toast from "react-hot-toast";
 
 export async function handleLogin(user) {
 	try {
+		if (!user) {
+			throw new Error("Not logged in!");
+		}
 		const response = await axios.post("/api/auth/login", user);
 
 		const { success, message, payload } = response.data;
