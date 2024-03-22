@@ -5,6 +5,8 @@ export async function SendMessageController(req, res) {
 	const { receiverId, text } = req.body;
 	const senderId = req.senderId;
 
+	console.log(process.env.SOCKET_PORT);
+
 	try {
 		let chat = await CHATMODEL.findOne({
 			members: { $all: [senderId, receiverId] },

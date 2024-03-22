@@ -33,11 +33,3 @@ mongoose
 		);
 	})
 	.catch((error) => console.log(error));
-
-// Socket.io connection
-
-const socketServer = createServer(app);
-const io = new Server(socketServer);
-io.on("connection", (socket) => {
-	console.log(`a user connected`);
-});

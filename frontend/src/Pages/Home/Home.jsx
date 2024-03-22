@@ -13,6 +13,7 @@ function Home() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		// Setting the userInfo
 		const userInfo = JSON.parse(localStorage.getItem("USER_INFO"));
 		async function check() {
 			const loggedIn = await handleLogin(userInfo);
