@@ -43,7 +43,7 @@ function Register() {
 				placeholder="Confirm Password"
 				value={form.confirmPassword}
 				onChange={(e) =>
-					setForm({ ...form, confirmPassword: e.target.value })
+					setUser({ ...form, confirmPassword: e.target.value })
 				}
 				type="password"
 			/>
