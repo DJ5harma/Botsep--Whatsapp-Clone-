@@ -25,31 +25,31 @@ function Register() {
 			<h1>Botsep</h1>
 			<input
 				placeholder="Fullname"
-				value={user.fullname}
+				value={form.fullname}
 				onChange={(e) => setForm({ ...form, fullname: e.target.value })}
 			/>
 			<input
 				placeholder="Username (unique)"
-				value={user.username}
+				value={form.username}
 				onChange={(e) => setForm({ ...form, username: e.target.value })}
 			/>
 			<input
 				placeholder="Password (min 8 chars)"
-				value={user.password}
+				value={form.password}
 				onChange={(e) => setForm({ ...form, password: e.target.value })}
 				type="password"
 			/>
 			<input
 				placeholder="Confirm Password"
-				value={user.confirmPassword}
+				value={form.confirmPassword}
 				onChange={(e) =>
-					setUser({ ...user, confirmPassword: e.target.value })
+					setUser({ ...form, confirmPassword: e.target.value })
 				}
 				type="password"
 			/>
 			<button
 				onClick={async () => {
-					const registered = await handleRegister(user);
+					const registered = await handleRegister(form);
 					if (registered) {
 						setUser(JSON.parse(localStorage.getItem("USER_INFO")));
 						navigate("/Home", { replace: true });
